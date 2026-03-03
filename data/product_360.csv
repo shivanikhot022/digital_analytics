@@ -1,0 +1,5 @@
+﻿product_id,product_name,product_created_at,total_orders,total_units_sold,total_revenue,total_cost,total_profit,primary_product_orders,cross_sell_orders,cross_sell_rate,first_sale_date,days_to_first_sale,refund_orders,refund_units,refund_rate
+1,The Original Mr. Fuzzy,00:00.0,24226,24226,1211057.781,472164.7345,738893.0462,23861,365,0.015066458,42:46.0,0,1237,1237,0.051060844
+2,The Forever Love Bear,00:00.0,5796,5796,347702.0497,130352.0387,217350.0111,4803,993,0.171325052,40:06.0,1,129,129,0.022256729
+3,The Birthday Sugar Panda,00:00.0,4985,4985,229260.1584,72232.64886,157027.5095,3068,1917,0.384553661,49:54.0,0,301,301,0.060381143
+4,The Hudson River Mini bear,00:00.0,5018,5018,150489.8189,47620.81885,102869,581,4437,0.884216819,02:39.0,0,64,64,0.012754085
