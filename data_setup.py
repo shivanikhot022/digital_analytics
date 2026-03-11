@@ -1,3 +1,4 @@
+#importing the packges
 import pandas as pd
 import numpy as np
 import os
@@ -69,6 +70,7 @@ def get_data():
             return "15–30 days"
         else:
             return "30+ days"
+    #creating the columns
     website_sessions["days_since_first_session_bin"] = website_sessions["days_since_first_session"].apply(bin_days)
     refund_map = order_item_refunds.set_index("order_item_id")["refund_amount_usd"]
     order_items["refund_amount_usd"] = order_items["order_item_id"].map(refund_map).fillna(0)
@@ -77,7 +79,7 @@ def get_data():
     order_items["actual_cost"] = order_items["cogs_usd"] - order_items["order_item_refund_cost"]
     order_items["profit"] = order_items["total_net_revenue"] - order_items["actual_cost"]
     order_items["profit_margin"] = np.where(order_items["total_net_revenue"] != 0,order_items["profit"] / order_items["total_net_revenue"],0)
-  
+  #merging the datasets
     orders_fact = order_items.merge(orders[["order_id", "created_at","website_session_id", "user_id"]],on="order_id",how="left")
     orders_fact = orders_fact.merge(products,on="product_id",how="left")
     orders_fact = orders_fact.merge(customer_360,left_on="user_id",right_on="customer_id",how="left")

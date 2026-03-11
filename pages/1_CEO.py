@@ -1,3 +1,4 @@
+#import packages
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -7,7 +8,7 @@ import seaborn as sns
 import plotly.express as px
 import warnings
 warnings.filterwarnings("ignore")
-
+#getting the data
 from data_setup import get_data
 
 st.set_page_config(page_title="CEO Dashboard", layout="wide")
@@ -15,7 +16,7 @@ with st.sidebar:
     if st.button("Logout"):
         st.session_state.clear()
         st.switch_page("Login.py")
-
+#page background
 st.markdown("""
 <style>
 
@@ -160,7 +161,7 @@ with tab1:
         avg_revenue_yoy = 1.0589
         
     st.markdown("<hr style='border:2px solid black'>", unsafe_allow_html=True) 
-
+    #metrics
     col1,col2,col3,col4,col5,col6,col7,col8= st.columns(8)
 
     col1.metric("Total Orders", format_num(total_orders))
