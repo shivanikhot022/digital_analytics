@@ -15,8 +15,8 @@ def get_data():
     order_items = pd.read_csv(os.path.join(data_path, "order_items.csv"))
     datetable=pd.read_csv(os.path.join(data_path,"datetable.csv"))
     products = pd.read_csv(os.path.join(data_path, "products.csv"))
-    website_sessions = pd.read_csv(os.path.join(data_path, "website_sessions.csv"))
-    website_pageviews = pd.read_csv(os.path.join(data_path, "website_pageviews.csv"),usecols=["website_pageview_id","created_at","website_session_id","pageview_url","funnel_step_final"],parse_dates=["created_at"])
+    website_sessions = pd.read_csv(os.path.join(data_path, "website_sessions.csv"),nrows=200000)
+    website_pageviews = pd.read_csv(os.path.join(data_path, "website_pageviews.csv"),nrows=200000,usecols=["website_pageview_id","created_at","website_session_id","pageview_url","funnel_step_final"],parse_dates=["created_at"])
     order_item_refunds = pd.read_csv(os.path.join(data_path, "order_item_refunds.csv"))
     customer_360 = pd.read_csv(os.path.join(data_path, "customer_360.csv"),usecols=["customer_id","customer_type","avg_order_value"])
     # MEMORY OPTIMIZATION
